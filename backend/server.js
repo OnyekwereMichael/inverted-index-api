@@ -23,11 +23,11 @@ app.use(cookieParser())
 
 // CORS Configuration
 const corsOptions = {
-    origin: 'http://localhost:5173', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    origin: ['https://inverted-index-client-isqp.vercel.app', ], 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
   };
-  
 // Apply CORS middleware
 app.use(cors(corsOptions));
 
