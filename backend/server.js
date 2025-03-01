@@ -1,15 +1,12 @@
 import express from 'express';
-import path from 'path'
+
 import authRoutes from './routes/auth.routes.js';
 import productRoutes from './routes/rides.routes.js';
-// import postRoutes from './routes/post.routes.js';
-// import messageRoutes from './routes/message.routes.js';
-// import notificationRoutes from './routes/notification.routes.js';
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser';
 import { v2 as cloudinary } from 'cloudinary';
 import cors from 'cors';
-import { connectDB } from './lib/db/connectMongoDb.js';
+import { connectDB } from './src/lib/db/connectMongoDb.js';
 
 dotenv.config()
 const app = express();
