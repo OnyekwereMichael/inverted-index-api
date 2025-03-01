@@ -1,12 +1,11 @@
 import express from 'express';
-
 import authRoutes from './routes/auth.routes.js';
-import productRoutes from './routes/rides.routes.js';
+import rideRoutes from './routes/rides.routes.js';
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser';
 import { v2 as cloudinary } from 'cloudinary';
 import cors from 'cors';
-import { connectDB } from './src/lib/db/connectMongoDb.js';
+import { connectDB } from './lib/db/connectMongoDb.js';
 
 dotenv.config()
 const app = express();
@@ -35,7 +34,7 @@ app.use(cors(corsOptions));
 const PORT = process.env.PORT || 5000;
 
 app.use('/api/auth', authRoutes);
-app.use('/api/ride', productRoutes);
+app.use('/api/ride', rideRoutes);
 // app.use('/api/post', postRoutes);
 // app.use('/api/notification', notificationRoutes);
 // app.use('/api/message', messageRoutes)
