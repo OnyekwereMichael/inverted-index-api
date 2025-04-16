@@ -6,8 +6,9 @@ import cookieParser from 'cookie-parser';
 import { v2 as cloudinary } from 'cloudinary';
 import cors from 'cors';
 import { connectDB } from './lib/db/connectMongoDb.js';
-
+import job from './lib/cron/cron.js'
 dotenv.config()
+job.start()
 const app = express();
 
 cloudinary.config({
